@@ -1,0 +1,293 @@
+/* ===== Warna dan pengaturan dasar ===== */
+:root {
+  --kuah: #8f1d14;     /* merah kuah */
+  --sumsum: #f2c94c;   /* kuning sumsum */
+  --daun: #2f5d3a;     /* hijau daun */
+  --arang: #1f1a17;    /* teks gelap */
+  --tulang: #fbfaf8;   /* latar terang */
+  --garis: #e6e1da;    /* garis tipis */
+
+  --bs-body-font-family: 'Source Sans 3', system-ui, sans-serif;
+  --bs-body-color: var(--arang);
+  --bs-body-bg: var(--tulang);
+  --bs-link-color: var(--kuah);
+}
+
+body {
+  padding-top: 64px;
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, .navbar-brand {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-weight: 700;
+}
+
+/* ===== Navbar ===== */
+.navbar {
+  background: var(--tulang);
+  border-bottom: 1px solid var(--garis);
+  transition: box-shadow .2s;
+}
+.navbar.scrolled { box-shadow: 0 2px 12px rgba(0, 0, 0, .08); }
+.navbar-brand { color: var(--kuah) !important; font-weight: 800; }
+.nav-link { color: var(--arang); }
+.nav-link.active { font-weight: 600; box-shadow: inset 0 -3px 0 var(--sumsum); }
+
+/* ===== Hero dan judul halaman ===== */
+.hero {
+  background: var(--kuah);
+  color: #fffffff3;
+  padding: 96px 0 88px;
+}
+.hero h1 {
+  font-size: clamp(2.4rem, 7vw, 4.8rem);
+  font-weight: 800;
+  line-height: 1.02;
+  max-width: 15ch;
+  margin-bottom: 1.25rem;
+}
+.hero .lead { max-width: 52ch; margin-bottom: 2rem; }
+
+.page-head {
+  background: var(--kuah);
+  color: #fff;
+  padding: 56px 0;
+}
+.page-head h1 { font-size: clamp(2rem, 5vw, 3rem); }
+.page-head p { margin: 0; opacity: .9; }
+
+/* ===== Tombol ===== */
+.btn-marrow { background: var(--sumsum); color: var(--arang); font-weight: 600; border: 0; }
+.btn-marrow:hover { background: #e6b93a; }
+.btn-brand { background: var(--kuah); color: #fff; }
+.btn-brand:hover { background: #6f160f; color: #fff; }
+.btn-outline-dark.active { background: var(--kuah); border-color: var(--kuah); }
+.btn:focus-visible, a:focus-visible, .tile:focus-visible {
+  outline: 3px solid var(--sumsum);
+  outline-offset: 2px;
+}
+
+/* ===== Latar dan kartu menu ===== */
+.band { background: #f3efe9; }
+.dish {
+  background: #fff;
+  border: 1px solid var(--garis);
+  border-left: 5px solid var(--kuah);
+  border-radius: 6px;
+  padding: 1.1rem 1.25rem;
+}
+.dish strong { color: var(--kuah); }
+
+/* ===== Galeri ===== */
+.tile {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border: 0;
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+  border-radius: 6px;
+  background: var(--kuah);
+}
+.tile img { width: 100%; height: 100%; object-fit: cover; }
+.tile span {
+  position: absolute;
+  inset: auto 0 0 0;
+  background: rgba(31, 26, 23, .75);
+  color: #fff;
+  padding: .5rem .75rem;
+  text-align: left;
+}
+
+/* ===== Halaman Tentang ===== */
+.kartu {
+  background: #fff;
+  border: 1px solid var(--garis);
+  border-top: 6px solid var(--sumsum);
+  border-radius: 10px;
+  padding: 1.75rem;
+  transition: transform .25s, box-shadow .25s;
+}
+.kartu:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 32px -16px rgba(143, 29, 20, .35);
+}
+.nomor {
+  display: block;
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: 2.6rem;
+  font-weight: 800;
+  color: var(--kuah);
+  opacity: .25;
+  line-height: 1;
+  margin-bottom: .5rem;
+}
+
+.label-kecil {
+  display: inline-block;
+  background: var(--daun);
+  color: #fff;
+  font-size: .85rem;
+  font-weight: 600;
+  padding: .2rem .8rem;
+  border-radius: 99px;
+  margin-bottom: 1rem;
+}
+.kutipan {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  font-weight: 700;
+  line-height: 1.35;
+  border-left: 6px solid var(--sumsum);
+  padding-left: 1.25rem;
+  margin: 0;
+}
+
+.fakta {
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px -15px rgba(0, 0, 0, .3);
+}
+.fakta h2 { background: var(--kuah); color: #fff; margin: 0; padding: 1rem 1.5rem; }
+.fakta dl { padding: 1.25rem 1.5rem 0; margin: 0; }
+.fakta dt { font-weight: 600; color: var(--kuah); }
+.fakta dd { margin-bottom: .9rem; }
+
+.langkah {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: #fff;
+  border: 1px solid var(--garis);
+  border-radius: 10px;
+  padding: 1.25rem;
+}
+.langkah b {
+  flex: none;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--kuah);
+  color: var(--sumsum);
+  display: grid;
+  place-items: center;
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: 1.4rem;
+}
+.langkah p { margin: 0; }
+
+/* ===== Footer ===== */
+.site-footer {
+  background: var(--arang);
+  color: #d8d2ca;
+  padding: 1.5rem 0;
+  font-size: .95rem;
+}
+
+/* Matikan animasi bagi pengguna yang memintanya */
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; }
+}
+
+/* ===== Catat pesanan ===== */
+.total { font-size: 1.2rem; }
+.total strong { color: var(--kuah); }
+.list-group-item .nama-menu { font-weight: 600; }
+.list-group-item .catatan { color: #6b645e; font-size: .9rem; }
+.btn-hapus { color: var(--kuah); border: 1px solid var(--kuah); background: #fff; border-radius: 6px; padding: .15rem .7rem; font-size: .9rem; }
+.btn-hapus:hover { background: var(--kuah); color: #fff; }
+
+/* ===== Pembayaran ===== */
+/* Kotak QR: lebarnya mengikuti isi (teks dan gambar) */
+#infoQr {
+  width: fit-content;
+  max-width: 100%;
+  text-align: center;
+}
+.info-bayar img {
+  width: 180px;      
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+
+/* ===== Pembayaran berhasil ===== */
+.centang { width: 72px; height: 72px; margin: 0 auto 1rem; border-radius: 50%; background: var(--daun); color: #fff; font-size: 2.6rem; line-height: 72px; }
+.struk { display: grid; grid-template-columns: auto 1fr; gap: .25rem 1rem; border-top: 1px dashed var(--garis); border-bottom: 1px dashed var(--garis); padding: .9rem 0; margin-bottom: .9rem; }
+.struk dt { font-weight: 600; color: var(--kuah); }
+.struk dd { margin: 0; text-align: right; }
+.struk-item li { display: flex; justify-content: space-between; gap: 1rem; padding: .15rem 0; }
+
+
+/* ===== Beranda ===== */
+.judul-bagian { font-size: clamp(1.5rem, 3vw, 2rem); margin-bottom: 2rem; }
+.judul-bagian::after {
+  content: "";
+  display: block;
+  width: 56px;
+  height: 5px;
+  background: var(--sumsum);
+  border-radius: 3px;
+  margin-top: .6rem;
+}
+
+.fitur { height: 100%; padding-left: 1.25rem; border-left: 5px solid var(--sumsum); }
+.fitur h3 { margin-bottom: .4rem; }
+.fitur p { margin: 0; color: #4a443f; }
+
+/* Kartu menu: tinggi sama dan harga selalu di bawah */
+.dish { display: flex; flex-direction: column; }
+.dish p { flex: 1; }
+
+
+:root {
+  --tulang: #fff6e5;   /* latar halaman */
+}
+.band { background: #fbfaf8; }   /* bagian selang-seling */
+
+
+/* ===== Warna metode pembayaran ===== */
+
+/* Tombol: tiap metode punya warna sendiri saat dipilih */
+#mCash:checked + label { background: #2f5d3a; border-color: #2f5d3a; color: #fff; }  /* hijau */
+#mTf:checked   + label { background: #b7791f; border-color: #b7791f; color: #fff; }  /* emas */
+#mQr:checked   + label { background: #8f1d14; border-color: #8f1d14; color: #fff; }  /* merah */
+
+/* Tombol: warna garis dan teks saat belum dipilih */
+#mCash + label { color: #2f5d3a; border-color: #2f5d3a; }
+#mTf   + label { color: #b7791f; border-color: #b7791f; }
+#mQr   + label { color: #8f1d14; border-color: #8f1d14; }
+
+/* Kotak info: latar lembut, garis tebal di kiri, teks berwarna */
+#infoCash { background: #eaf3ec; border: 1px solid #c9dfce; border-left: 6px solid #2f5d3a; color: #1f4128; }
+#infoTf   { background: #fff4d9; border: 1px solid #f0dca8; border-left: 6px solid #b7791f; color: #6b4410; }
+#infoQr   { background: #fbeceb; border: 1px solid #efc8c5; border-left: 6px solid #8f1d14; color: #6f160f; }
+
+#infoTf strong { color: #b7791f; font-size: 1.1rem; }
+
+/* Gambar QR: bingkai berwarna */
+#infoQr img {
+  background: #fff;
+  border: 4px solid #8f1d14;
+  border-radius: 10px;
+  padding: 8px;
+  box-shadow: 0 8px 20px -10px rgba(143, 29, 20, .5);
+}
+
+
+/* ===== Jarak QR dari garis kotak ===== */
+#infoQr {
+  padding: 1.25rem 1.5rem 1.5rem 1.75rem;   /* atas, kanan, bawah, kiri */
+}
+ 
+/* ===== Jarak teks dari garis kotak (Cash dan Transfer) ===== */
+#infoCash,
+#infoTf {
+  padding: 1rem 1.25rem 1rem 1.5rem;   /* atas, kanan, bawah, kiri */
+  line-height: 1.8;                    /* jarak antarbaris */
+}
